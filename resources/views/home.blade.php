@@ -23,6 +23,23 @@
                 <div class="col-12 text-center">
                     <h1>Trains List</h1>
                 </div>
+                @forelse ($trains as $train)
+                    <div class="col-4 card">
+                        <h4>{{$train->Azienda}}</h4>
+                        <ul class="list-unstyled">
+                            <li><strong>Stazione di partenza: </strong>{{$train->stazione_di_partenza}}</li>
+                            <li><strong>Stazione di arrivo: </strong>{{$train->stazione_di_arrivo}}</li>
+                            <li><strong>Orario di partenza: </strong>{{$train->orario_di_partenza}}</li>
+                            <li><strong>Orario di arrivo: </strong>{{$train->orario_di_arrivo}}</li>
+                            <li><strong>Codice treno: </strong>{{$train->codice_treno}}</li>
+                            <li><strong>Numero carrozze: </strong>{{$train->numero_carrozze}}</li>
+                            <li><strong>In orario: </strong>{{$train->in_orario}}</li>
+                            <li><strong>Cancellato: </strong>{{$train->Cancellato}}</li>
+                        </ul>
+                    </div>
+                @empty
+                    <p>Nessun treno è presente</p>
+                @endforelse
             </div>
 
         </div>
